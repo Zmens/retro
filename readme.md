@@ -13,6 +13,9 @@ winpty python
 
 ## Version control (GIT)
 git status
-git branch
+
+git add #myfiles#
+git commit -m "mynyewfiles"
+git push origin master
 
 
