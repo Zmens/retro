@@ -1,19 +1,25 @@
 import pyxel
-from retro import start
 
 
-def update():
-    if pyxel.btnp(pyxel.KEY_Q):
-        start.print_end()
-        pyxel.quit()
+class App:
+    def __init__(self):
+        pyxel.init(160, 120)
+        self.x = 0
+        self.movement = 10
+        pyxel.run(self.update, self.draw)
+
+    def update(self):
+        self.x = (self.x + 1) % pyxel.width
+
+    def draw(self):
+        pyxel.cls(0)
+        pyxel.rect(self.x, self.movement, self.x + self.movement, 7, 9)
+
+    def draw_test(self, plus: int):
+        pyxel.cls(0)
+        pyxel.rect(self.x, self.x + self.movement, 7, 9)
 
 
-def draw():
-    pyxel.cls(0)
-    pyxel.rect(10, 10, 20, 20, 11)
+app = App()
 
-
-start.print_start()
-pyxel.init(160, 120)
-pyxel.run(update, draw)
 

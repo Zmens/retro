@@ -7,3 +7,5 @@ __pycache__/
 dmypy.json
 
 .idea
+
+pyxel_examples
